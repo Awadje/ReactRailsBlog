@@ -1,16 +1,17 @@
 var AllPosts = React.createClass({
+  render() {
+    var posts= this.props.posts.map((post) => {
+      return (
+        <div key={post.id}>
+         <h3>{post.title}</h3>
+         <p>{post.blog}</p>
+        </div>
+      )
+    });
 
-getInitialState() {
-  return { posts: [] }
-},
-
-componentDidMount() { console.log('Component mounted');
-},
-
-render() {
-  return (
-      <div>
-        <h1>All items component</h1>
+    return(
+       <div>
+        {posts}
       </div>
     )
   }
